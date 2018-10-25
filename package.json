@@ -1,0 +1,32 @@
+{
+  "name": "the-unicorn-project",
+  "version": "1.0.0",
+  "description": "Re-rendering of S'Mac website",
+  "main": "server.js",
+  "repository": "https://github.com/arthurbernierjr/the-unicorn-project.git",
+  "author": "Daniel McKemie, Arthur Bernier Jr.",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "global": "^4.3.2",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "sequelize": "^4.39.1",
+    "validator": "^10.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+   "scripts": {
+    "client-install": "yarn add --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  }
+}
