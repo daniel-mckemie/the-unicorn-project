@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
-const ItemSchema = new Schema({
-	name: {
+const SizeSchema = new Schema({
+	size: {
 		type: String,
 		required: true
 	},
+	price: {
+		type: Number,
+	},
 });
 
-module.exports = Item = mongoose.model('items', ItemSchema)
+module.exports = Size = mongoose.model('sizes', SizeSchema)

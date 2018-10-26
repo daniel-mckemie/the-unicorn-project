@@ -6,6 +6,8 @@ const methodOverride = require('method-override');
 const logger = require('morgan');
 
 const users = require('./routes/api/users');
+const items = require('./routes/api/items');
+const sizes = require('./routes/api/sizes');
 
 const app = express();
 
@@ -32,6 +34,8 @@ app.get('/', (req, res) => res.send('Hello'));
 
 // Use routes
 app.use('/api/users', users);
+app.use('/api/items', items);
+app.use('/api/sizes', sizes);
 
 
 
