@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const users = require('./routes/api/users');
+
 const app = express();
 
 app.use("/", express.static("./build/"));
@@ -13,6 +15,8 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello'));
 
+// Use routes
+app.use('/api/users', users);
 
 
 
