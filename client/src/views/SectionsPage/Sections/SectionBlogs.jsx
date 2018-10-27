@@ -28,7 +28,7 @@ function SectionBlogs({ ...props }) {
   const { classes, ...rest } = props;
   return (
     <div className="cd-section" {...rest}>
-      {/* Blogs 1 START */}
+      {/* Blogs 1 START
       <div className={classes.blog}>
         <div className={classes.container}>
           <GridContainer>
@@ -139,7 +139,7 @@ function SectionBlogs({ ...props }) {
           </GridContainer>
         </div>
       </div>
-      {/* Blogs 1 END */}
+      Blogs 1 END */}
       {/* Blogs 2 START */}
       <div className={classes.blog}>
         <div className={classes.container}>
@@ -150,7 +150,7 @@ function SectionBlogs({ ...props }) {
               md={10}
               className={`${classes.mlAuto} ${classes.mrAuto}`}
             >
-              <h2 className={classes.title}>Latest Blogposts 2</h2>
+
               <br />
               <GridContainer>
                 <GridItem xs={12} sm={4} md={4}>
@@ -168,24 +168,9 @@ function SectionBlogs({ ...props }) {
                       />
                     </CardHeader>
                     <CardBody plain>
-                      <Info>
-                        <h6 className={classes.cardCategory}>ENTERPRISE</h6>
-                      </Info>
-                      <h4 className={classes.cardTitle}>
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          Autodesk looks to future of 3D printing with Project
-                          Escher
-                        </a>
-                      </h4>
-                      <p className={classes.description}>
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          {" "}
-                          Read More{" "}
-                        </a>
-                      </p>
+                      <center>
+                        <h1>Order</h1>
+                      </center>
                     </CardBody>
                   </Card>
                 </GridItem>
@@ -204,23 +189,9 @@ function SectionBlogs({ ...props }) {
                       />
                     </CardHeader>
                     <CardBody plain>
-                      <Success>
-                        <h6 className={classes.cardCategory}>STARTUPS</h6>
-                      </Success>
-                      <h4 className={classes.cardTitle}>
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          Lyft launching cross-platform service this week
-                        </a>
-                      </h4>
-                      <p className={classes.description}>
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          {" "}
-                          Read More{" "}
-                        </a>
-                      </p>
+                    <center>
+                    <h1>Menu</h1>
+                    </center>
                     </CardBody>
                   </Card>
                 </GridItem>
@@ -239,25 +210,9 @@ function SectionBlogs({ ...props }) {
                       />
                     </CardHeader>
                     <CardBody plain>
-                      <Danger>
-                        <h6 className={classes.cardCategory}>
-                          <TrendingUp />ENTERPRISE
-                        </h6>
-                      </Danger>
-                      <h4 className={classes.cardTitle}>
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          6 insights into the French Fashion landscape
-                        </a>
-                      </h4>
-                      <p className={classes.description}>
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses.
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          {" "}
-                          Read More{" "}
-                        </a>
-                      </p>
+                      <center>
+                      <h1>Catering</h1>
+                      </center>
                     </CardBody>
                   </Card>
                 </GridItem>
@@ -267,7 +222,7 @@ function SectionBlogs({ ...props }) {
         </div>
       </div>
       {/* Blogs 2 END */}
-      {/* Blogs 3 START */}
+      {/* Blogs 3 START
       <div className={classes.blog}>
         <div className={classes.container}>
           <GridContainer>
@@ -445,8 +400,8 @@ function SectionBlogs({ ...props }) {
           </GridContainer>
         </div>
       </div>
-      {/* Blogs 3 END */}
-      {/* Blogs 4 START */}
+       Blogs 3 END */}
+      {/* Blogs 4 START
       <div className={classes.blog}>
         <div className={classes.container}>
           <GridContainer>
@@ -526,7 +481,7 @@ function SectionBlogs({ ...props }) {
           </GridContainer>
         </div>
       </div>
-      {/* Blogs 4 END */}
+      Blogs 4 END */}
     </div>
   );
 }

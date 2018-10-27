@@ -13,40 +13,30 @@ import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-// sections for this page
-import SectionDescription from "views/PresentationPage/Sections/SectionDescription.jsx";
-import SectionComponents from "views/PresentationPage/Sections/SectionComponents.jsx";
-import SectionCards from "views/PresentationPage/Sections/SectionCards.jsx";
-import SectionContent from "views/PresentationPage/Sections/SectionContent.jsx";
-import SectionSections from "views/PresentationPage/Sections/SectionSections.jsx";
-import SectionExamples from "views/PresentationPage/Sections/SectionExamples.jsx";
-import SectionFreeDemo from "views/PresentationPage/Sections/SectionFreeDemo.jsx";
-import SectionOverview from "views/PresentationPage/Sections/SectionOverview.jsx";
-import SectionPricing from "views/PresentationPage/Sections/SectionPricing.jsx";
+
 
 import presentationStyle from "assets/jss/material-kit-pro-react/views/presentationStyle.jsx";
 
-class PresentationPage extends React.Component {
+class DefaultLayout extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
   render() {
-    const { classes } = this.props;
+    const { classes, children, parallaxImg, h1text, h2text } = this.props;
     return (
       <div>
         <Header
-
-          links={<HeaderLinks dropdownHoverColor="info" />}
+          links={<HeaderLinks dropdownHoverColor="warning" />}
           fixed
           color="warning"
           changeColorOnScroll={{
             height: 400,
-            color: "info"
+            color: "warning"
           }}
         />
         <Parallax
-          image={require("assets/images/hero.png")}
+          image={parallaxImg}
           className={classes.parallax}
         >
           <div className={classes.container}>
@@ -54,10 +44,10 @@ class PresentationPage extends React.Component {
               <GridItem>
                 <div className={classes.brand}>
                   <h1 style={{fontSize:"6rem"}}>
-                    Welcome to SMAC
+                  {h1text}
                   </h1>
                   <h2 style={{fontSize:"3rem"}} className={classes.title}>
-                    Irresistible Mac and Cheese
+                    {h2text}
                   </h2>
                 </div>
               </GridItem>
@@ -65,16 +55,8 @@ class PresentationPage extends React.Component {
           </div>
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
-          {/*<SectionDescription />
-          <SectionComponents />
-          <SectionCards />
-          <SectionContent />
-          <SectionSections />
-          <SectionExamples />
-          <SectionFreeDemo />
-          <SectionOverview />*/}
+        {children}
         </div>
-        {/*<SectionPricing />*/}
         <Footer
           theme="warning"
           content={
@@ -157,4 +139,4 @@ class PresentationPage extends React.Component {
   }
 }
 
-export default withStyles(presentationStyle)(PresentationPage);
+export default withStyles(presentationStyle)(DefaultLayout);

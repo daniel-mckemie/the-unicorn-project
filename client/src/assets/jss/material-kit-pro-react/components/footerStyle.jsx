@@ -5,6 +5,7 @@
 import {
   container,
   primaryColor,
+  warningColor,
   btnLink
 } from "assets/jss/material-kit-pro-react.jsx";
 
@@ -92,6 +93,19 @@ const footerStyle = {
       color: "#fff"
     }
   },
+  warning: {
+      backgroundColor: warningColor,
+      color: "#3c4858",
+      textDecoration: "none",
+      "& a": {
+        "&:visited": {
+          color: "#3c4858"
+        },
+        "&:hover, &:focus": {
+          color: "#89229b"
+        }
+      }
+    },
   white: {
     backgroundColor: "#fff",
     color: "#3c4858",

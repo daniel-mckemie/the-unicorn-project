@@ -68,14 +68,18 @@ class Header extends React.Component {
       [classes.fixed]: fixed
     });
     return (
-      <AppBar className={appBarClasses}>
-        <Toolbar className={classes.container}>
-          <Button className={classes.title}>
-            <Link to="/">{brand}</Link>
-          </Button>
+      <nav style={{backgroundColor:"orange", width:"100vw"}}>
+      <AppBar style={{width: "100%",
+objectFit: "contain", paddingRight:"15vw"}} className={appBarClasses}>
+        <Toolbar  className={classes.container}>
+        {/*<Button className={classes.title}>
+          <Link to="/">{brand}</Link>
+        </Button>*/}
+          <div>
           <Hidden smDown implementation="css" className={classes.hidden}>
             <div className={classes.collapse}>{links}</div>
           </Hidden>
+          </div>
           <Hidden mdUp>
             <IconButton
               color="inherit"
@@ -108,6 +112,7 @@ class Header extends React.Component {
           </Drawer>
         </Hidden>
       </AppBar>
+      </nav>
     );
   }
 }

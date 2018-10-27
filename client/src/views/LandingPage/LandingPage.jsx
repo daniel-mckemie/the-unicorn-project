@@ -49,21 +49,16 @@ class LandingPage extends React.Component {
         <Parallax image={require("assets/images/hero.png")}>
           <div className={classes.container}>
             <GridContainer justify="center">
-              <GridItem
-                md={8}
-                sm={8}
-                className={classNames(
-                  classes.mlAuto,
-                  classes.mrAuto,
-                  classes.textCenter
-                )}
-              >
-                <h1 className={classes.title}>About Us</h1>
-                <h4>
-                  Meet the amazing team behind this project and find out more
-                  about how we work.
-                </h4>
-              </GridItem>
+            <GridItem xs={12}  className={classNames(
+              classes.mlAuto,
+              classes.mrAuto,
+              classes.textCenter
+            )}>
+            <h1 className={classNames(classes.textCenter, classes.title)}>Welcome To S'MAC</h1>
+            <h2>
+              Irresistible Mac n Cheese
+            </h2>
+            </GridItem>
             </GridContainer>
           </div>
         </Parallax>

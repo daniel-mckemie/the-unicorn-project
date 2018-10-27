@@ -1,3 +1,4 @@
+import HomePage from "views/customviews/Home.jsx";
 import AboutUsPage from "views/AboutUsPage/AboutUsPage.jsx";
 import BlogPostPage from "views/BlogPostPage/BlogPostPage.jsx";
 import BlogPostsPage from "views/BlogPostsPage/BlogPostsPage.jsx";
@@ -33,7 +34,7 @@ var indexRoutes = [
     component: ShoppingCartPage
   },
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
-  { path: "/", name: "PresentationPage", component: PresentationPage }
+  { path: "/", name: "HomePage", component: HomePage }
 ];
 
 export default indexRoutes;
