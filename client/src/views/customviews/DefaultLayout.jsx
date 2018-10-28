@@ -23,18 +23,15 @@ class DefaultLayout extends React.Component {
     document.body.scrollTop = 0;
   }
   render() {
-    const { classes, children, parallaxImg, h1text, h2text } = this.props;
+    const { classes, children, parallaxImg, h1Text, h2Text, heroHeight, noParallax } = this.props;
     return (
       <div>
         <Header
           links={<HeaderLinks dropdownHoverColor="warning" />}
           fixed
           color="warning"
-          changeColorOnScroll={{
-            height: 400,
-            color: "warning"
-          }}
         />
+        {noParallax?<span></span>:
         <Parallax
           image={parallaxImg}
           className={classes.parallax}
@@ -44,16 +41,16 @@ class DefaultLayout extends React.Component {
               <GridItem>
                 <div className={classes.brand}>
                   <h1 style={{fontSize:"6rem"}}>
-                  {h1text}
+                  {h1Text}
                   </h1>
                   <h2 style={{fontSize:"3rem"}} className={classes.title}>
-                    {h2text}
+                    {h2Text}
                   </h2>
                 </div>
               </GridItem>
             </GridContainer>
           </div>
-        </Parallax>
+        </Parallax>}
         <div className={classNames(classes.main, classes.mainRaised)}>
         {children}
         </div>

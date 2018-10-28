@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultLayout from "views/customviews/DefaultLayout.jsx";
 
-class Confirm extends React.Component {
+class Catering extends React.Component {
 
   render() {
 
@@ -14,4 +14,4 @@ class Confirm extends React.Component {
   }
 }
 
-export default Confirm;
+export default Catering;
