@@ -65,60 +65,52 @@ class PresentationPage extends React.Component {
           </div>
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <SectionDescription />
+          {/*<SectionDescription />
           <SectionComponents />
           <SectionCards />
           <SectionContent />
           <SectionSections />
           <SectionExamples />
           <SectionFreeDemo />
-          <SectionOverview />
+          <SectionOverview />*/}
         </div>
-        <SectionPricing />
+        {/*<SectionPricing />*/}
         <Footer
-          theme="white"
+          theme="warning"
           content={
             <div>
               <div className={classes.left}>
                 <a
-                  href="https://www.creative-tim.com/product/material-kit-pro-react"
+                  href="https://google.com"
                   className={classes.footerBrand}
                 >
-                  Material Kit PRO React
+                  Location: 197 1st Avenue, NY, NY 10003
                 </a>
               </div>
               <div className={classes.pullCenter}>
                 <List className={classes.list}>
                   <ListItem className={classes.inlineBlock}>
                     <a
-                      href="https://www.creative-tim.com/"
+                      href="https://www.google.com/"
                       className={classes.block}
                     >
-                      Creative Tim
+                    Phone: 212-358-7912
                     </a>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
                     <a
-                      href="https://www.creative-tim.com/presentation"
+                      href="emailto: eastvillage@smacnyc.com"
                       className={classes.block}
                     >
-                      About us
+                      Email: eastvillage@smacnyc.com
                     </a>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
                     <a
-                      href="//blog.creative-tim.com/"
+                      href="hhtps://google.com"
                       className={classes.block}
                     >
-                      Blog
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/license"
-                      className={classes.block}
-                    >
-                      Licenses
+                      Open Daily: 11:00am - 11:00pm
                     </a>
                   </ListItem>
                 </List>
@@ -127,22 +119,22 @@ class PresentationPage extends React.Component {
                 <ul>
                   <li>
                     <Button
-                      href="https://twitter.com/CreativeTim"
+                      href="https://facebook.com"
+                      color="facebook"
+                      justIcon
+                      simple
+                    >
+                      <i className="fab fa-facebook" />
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      href="https://twitter.com"
                       color="twitter"
                       justIcon
                       simple
                     >
                       <i className="fab fa-twitter" />
-                    </Button>
-                  </li>
-                  <li>
-                    <Button
-                      href="https://dribbble.com/creativetim"
-                      color="dribbble"
-                      justIcon
-                      simple
-                    >
-                      <i className="fab fa-dribbble" />
                     </Button>
                   </li>
                   <li>

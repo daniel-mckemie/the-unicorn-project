@@ -71,7 +71,7 @@ const defaultFont = {
 
 const primaryColor = "#9c27b0";
 const secondaryColor = "#fafafa";
-const warningColor = "#ff9800";
+const warningColor = "#ff802c";
 const dangerColor = "#f44336";
 const successColor = "#4caf50";
 const infoColor = "#00acc1";
