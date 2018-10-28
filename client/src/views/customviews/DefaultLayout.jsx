@@ -25,14 +25,14 @@ class DefaultLayout extends React.Component {
   render() {
     const { classes, children, parallaxImg, h1Text, h2Text, heroHeight, noParallax } = this.props;
     return (
-      <div>
+      <div style={{fontFamily:`Futura-Bold,Arial,Nunito`, fontWeight:`800`}}>
         <Header
           links={<HeaderLinks dropdownHoverColor="warning" />}
           fixed
           color="warning"
         />
         {noParallax?<span></span>:
-        <Parallax
+        <Parallax style ={{height:heroHeight}}
           image={parallaxImg}
           className={classes.parallax}
         >
@@ -98,32 +98,32 @@ class DefaultLayout extends React.Component {
                 <ul>
                   <li>
                     <Button
-                      href="https://facebook.com"
+                      href="https://facebook.com/eatsmac"
                       color="facebook"
                       justIcon
                       simple
                     >
-                      <i className="fab fa-facebook" />
+                      <i className="fab fa-facebook fa-2x" />
                     </Button>
                   </li>
                   <li>
                     <Button
-                      href="https://twitter.com"
+                      href="https://twitter.com/eatsmac"
                       color="twitter"
                       justIcon
                       simple
                     >
-                      <i className="fab fa-twitter" />
+                      <i className="fab fa-twitter fa-2x" />
                     </Button>
                   </li>
                   <li>
                     <Button
-                      href="https://instagram.com/CreativeTimOfficial"
+                      href="https://instagram.com/eatsmac"
                       color="instagram"
                       justIcon
                       simple
                     >
-                      <i className="fab fa-instagram" />
+                      <i className="fab fa-instagram fa-2x"></i>
                     </Button>
                   </li>
                 </ul>

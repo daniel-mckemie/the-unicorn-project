@@ -2,17 +2,12 @@ import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-import Favorite from "@material-ui/icons/Favorite";
 import Face from "@material-ui/icons/Face";
 // core components
-import Header from "components/Header/Header.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import Footer from "components/Footer/Footer.jsx";
+import { Link } from "react-router-dom";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
@@ -23,7 +18,6 @@ import CustomInput from "components/CustomInput/CustomInput.jsx";
 
 import loginPageStyle from "assets/jss/material-kit-pro-react/views/loginPageStyle.jsx";
 
-import image from "assets/img/bg7.jpg";
 
 class LoginForm extends React.Component {
   componentDidMount() {
@@ -48,11 +42,11 @@ class LoginForm extends React.Component {
                 <Card>
                   <form className={classes.form}>
                     <CardHeader
-                      color="warning"
+                    style={{backgroundColor:`#ff802c`}}
                       signup
                       className={classes.cardHeader}
                     >
-                      <h2   style={{color:"black", fontFamily:"Nunito Sans"}}>Welcome Back!</h2>
+                      <h2   style={{color:"black", fontFamily:"Futura,Arial,Nunito Sans"}}>Welcome Back!</h2>
                     </CardHeader>
                     <p
                       className={`${classes.textCenter}`}
@@ -109,11 +103,14 @@ class LoginForm extends React.Component {
                       />
                     </CardBody>
                     <div className={classes.textCenter}>
-                    <span>Don't Have An Account Sign Up <a href="/signup" className="link"></a>Here</span>
+                    <Link to="/signup">
+                    <span>Don't Have An Account Sign Up Here</span></Link>
+                    <Link to="/profile">
                       <Button color="warning" size="lg">
                         <span style={{color:"black"}}>Get My Mac and Cheese On!</span>
-                        <div style={{clipPath : `polygon(10% 40%, 70% 40%, 70% 20%, 110% 53%, 70% 83%, 70% 62%, 10% 63%)`, marginLeft:"3px", backgroundColor:"black ", width:"2rem",height:"2rem", display:"inline"}}></div>
+                        <div style={{clipPath : `polygon(10% 40%, 70% 40%, 70% 20%, 100% 53%, 70% 83%, 70% 62%, 10% 63%)`, marginLeft:"3px", backgroundColor:"black ", width:"4rem",height:"2rem", display:"inline"}}></div>
                       </Button>
+                      </Link>
                     </div>
                   </form>
                 </Card>

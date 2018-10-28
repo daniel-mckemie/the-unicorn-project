@@ -2,18 +2,13 @@ import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
-import TrendingUp from "@material-ui/icons/TrendingUp";
+
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
-import Info from "components/Typography/Info.jsx";
-import Danger from "components/Typography/Danger.jsx";
-import Success from "components/Typography/Success.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-
 import blogsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/blogsStyle.jsx";
 
 
@@ -38,7 +33,7 @@ const cardFooterStyle ={
   marginTop:"0.05rem"
 }
 
-function SectionBlogs({ ...props }) {
+function HomeCard({ ...props }) {
   const { classes, ...rest } = props;
   return (
     <div className="cd-section" {...rest}>
@@ -126,4 +121,4 @@ function SectionBlogs({ ...props }) {
   );
 }
 
-export default withStyles(blogsStyle)(SectionBlogs);
+export default withStyles(blogsStyle)(HomeCard);

@@ -1,13 +1,16 @@
 import React from "react";
 import DefaultLayout from "views/customviews/DefaultLayout.jsx";
+import CreateAccountForm from "views/customviews/functionalcomponents/CreateAccountForm.jsx";
 
 class CreateAccount extends React.Component {
 
   render() {
 
     return (
-      <DefaultLayout parallaxImg={require('assets/images/catering_hero.png')} heroHeight={300}>
-
+      <DefaultLayout heroHeight={0} noParallax={true}>
+      <div style={{height:`120vh`}}>
+      <CreateAccountForm />
+      </div>
       </DefaultLayout>
 
     );

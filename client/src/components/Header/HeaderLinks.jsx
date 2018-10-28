@@ -43,6 +43,8 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-kit-pro-react/components/headerLinksStyle.jsx";
 
+import logo from "assets/images/logo.png";
+
 function HeaderLinks({ ...props }) {
   const easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
@@ -84,7 +86,7 @@ function HeaderLinks({ ...props }) {
   var onClickSections = {};
   const listStyleNav = {color:"black", width: "138px",
 height: "24px",
-fontFamily: "Nunito",
+fontFamily: "Futura,Nunito,Arial",
 fontSize: "18px",
 fontWeight: "bold",
 fontStyle: "normal",
@@ -92,32 +94,42 @@ fontStretch: "normal",
 lineHeight: "normal",
 letterSpacing: "0.1px",
 textAlign: "center"}
-  const { classes, dropdownHoverColor } = props;
+  const { classes, dropdownHoverColor,cartContents } = props;
   return (
-    <List className={classes.list + " " + classes.mlAuto}>
+    <List className={classes.list + " " + classes.mlAuto} id="header">
       <ListItem>
-        <Link style={listStyleNav}to="/">Our Story</Link>
+        <Link style={listStyleNav}to="/#ourstory">Our Story</Link>
       </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/">Menu</Link>
+        <Link style={listStyleNav} to="/menu">Menu</Link>
       </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/">Order</Link>
+        <Link style={listStyleNav} to="/menu">Order</Link>
       </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/"> Smac Logo</Link>
+        <Link style={listStyleNav} to="/#begin"> <img style={{width:`12rem`, marginTop:`-2rem`}} src={logo} alt="Smac Logo" /></Link>
       </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/">Catering</Link>
+        <Link style={listStyleNav} to="/catering">Catering</Link>
       </ListItem>
       <ListItem>
         <Link style={listStyleNav} to="/">Shop</Link>
       </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/">Login</Link>
-      </ListItem>
+        <Link style={listStyleNav} to="/login">
+        <span class="fa-layers fa-fw">
+          <i className="fas fa-user-circle fa-2x "></i>
+           <span className="fa-layers-counter" >Login</span>
+         </span>
+         </Link>
+        </ListItem>
       <ListItem>
-        <Link style={listStyleNav} to="/">ShoppingCart</Link>
+        <Link style={listStyleNav} to="/cart">
+        <span class="fa-layers fa-fw">
+          <i className="fas fa-shopping-cart fa-2x"></i>
+           <span className="fa-layers-counter" >{cartContents?<span>{cartContents.length}</span>:<span>{'ViewCart'}</span>}</span>
+         </span>
+        </Link>
       </ListItem>
     </List>
   );
