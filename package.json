@@ -10,23 +10,31 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "global": "^4.3.2",
     "jsonwebtoken": "^8.3.0",
+    "method-override": "^3.0.0",
     "mongoose": "^5.3.4",
+    "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "sequelize": "^4.39.1",
+    "pg": "^7.6.0",
+    "sequelize": "^4.41.0",
     "validator": "^10.8.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.5"
   },
-   "scripts": {
+  "scripts": {
     "client-install": "yarn add --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "db": "psql -d smacdb",
+    "db:init": "dropdb --if-exists smacdb && createdb smacdb",
+    "db:reset": "node scripts/resetDB",
+    "db:seed": "node scripts/seedDB"
   }
 }
