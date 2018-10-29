@@ -35,13 +35,13 @@ class Menu extends React.Component {
       </center>
       <GridContainer>
            { items.map((item,index)=>{
-           return <MenuItem key={index} name={item.name} description ={"I'm Yummy Buy Me"} image = "http://progressandfortune.com/smac_images/menu_items/sampler.png"/>
+           return <MenuItem key={index} name={item.name} description={"I'm Yummy Buy Me"} image={item.imgUrl} />
            })
          }
          </GridContainer>
-
+      {/*
       <MenuItem name={"Name Data Here"} description={"Description Data Here"}
-      image="http://progressandfortune.com/smac_images/menu_items/sampler.png"/>
+      image={"http://progressandfortune.com/smac_images/menu_items/sampler.png"}/> */}
       </DefaultLayout>
 
     );

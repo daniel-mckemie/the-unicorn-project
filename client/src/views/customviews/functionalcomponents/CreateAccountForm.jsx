@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -26,10 +27,47 @@ class CreateAccountForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: '',
+      password: '',
       checked: [1]
     };
     this.handleToggle = this.handleToggle.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  async registerUser(userData) {
+    const api_end = '/api/users/register'
+    const response = await axios.post(api_end)
+    this.setState({
+      email: response.email,
+      password: response.password
+    })
+    console.log(response.email);
+    console.log(response.password)
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const newUser = {
+      email: this.state.email,
+      password: this.state.password,    
+    };
+
+    this.props.registerUser(newUser, this.props.history);
+  }
+
   handleToggle(value) {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
@@ -50,7 +88,7 @@ class CreateAccountForm extends React.Component {
     document.body.scrollTop = 0;
   }
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, email, password, ...rest } = this.props;
     return (
       <div {...rest}>
         <div
@@ -70,7 +108,7 @@ class CreateAccountForm extends React.Component {
                   <CardBody>
                     <GridContainer justify="center">
                       <GridItem xs={12} sm={10} md={10}>
-                        <form style={{backgroundColor:`white`, padding:`10%`, }} className={`${classes.form}`, `${classes.cardSignup}`}>
+                        <form onSubmit={this.onSubmit} style={{backgroundColor:`white`, padding:`10%`, }} className={`${classes.form}`, `${classes.cardSignup}`}>
                           <CustomInput
                             formControlProps={{
                               fullWidth: true,
@@ -91,9 +129,12 @@ class CreateAccountForm extends React.Component {
                             }}
                           />
                           <CustomInput
+                            value={this.email}
+                            onChange={this.onChange}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.customFormControlClasses
+                              className: classes.customFormControlClasses,
+
                             }}
                             inputProps={{
                               startAdornment: (
@@ -106,13 +147,15 @@ class CreateAccountForm extends React.Component {
                                   />
                                 </InputAdornment>
                               ),
-                              placeholder: "Email..."
+                              placeholder: "Email...",                              
                             }}
                           />
                           <CustomInput
+                            value={this.password}
+                            onChange={this.onChange}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.customFormControlClasses
+                              className: classes.customFormControlClasses,                              
                             }}
                             inputProps={{
                               startAdornment: (
@@ -125,7 +168,7 @@ class CreateAccountForm extends React.Component {
                                   </Icon>
                                 </InputAdornment>
                               ),
-                              placeholder: "Password..."
+                              placeholder: "Password...",                                                          
                             }}
                           />
                           <FormControlLabel

@@ -1,6 +1,5 @@
-// API keys and secret stuff here.
-
-module.exports = {
-	mongoURI: 'mongodb://daniel:dmckemie77@ds111113.mlab.com:11113/smacdb',
-	secretOrKey: 'secret'
-};
+if(process.env.NODE_ENV === 'production') {
+	module.exports = require('./keys_prod')
+} else {
+	module.exports = require('./keys_dev')
+}
