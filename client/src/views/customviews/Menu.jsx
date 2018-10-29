@@ -39,8 +39,6 @@ class Menu extends React.Component {
            })
          }
          </GridContainer>
-
-
       {/*
       <MenuItem name={"Name Data Here"} description={"Description Data Here"}
       image={"http://progressandfortune.com/smac_images/menu_items/sampler.png"}/> */}
