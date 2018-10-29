@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const methodOverride = require('method-override');
 const logger = require('morgan');
+const passport = require('passport')
 
 const users = require('./routes/api/users');
 const items = require('./routes/api/items');
@@ -28,14 +29,21 @@ mongoose
 	.then(() => console.log('MongoDB Connected'))
 	.catch(err => console.log(err));
 
-app.get('/', (req, res) => res.send('Hello'));
-
-
 
 // Use routes
 app.use('/api/users', users);
 app.use('/api/items', items);
 app.use('/api/sizes', sizes);
+
+
+// Test if in production
+if(process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	})
+}
 
 
 
