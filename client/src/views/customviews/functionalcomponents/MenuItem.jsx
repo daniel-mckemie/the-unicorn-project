@@ -37,10 +37,8 @@ import cardProject6 from "assets/img/examples/card-project6.jpg";
 function MenuItem({ ...props }) {
   const { classes,name,image,description, ...rest } = props;
   return (
-    <div className="cd-section" {...rest}>
-      <div className={classes.projects}>
-        <div className={classes.container}>
-          <GridContainer>
+
+          
             <GridItem xs={12} sm={6} md={4}>
               <Card
                 raised
@@ -63,10 +61,8 @@ function MenuItem({ ...props }) {
                 </CardBody>
               </Card>
             </GridItem>
-          </GridContainer>
-    </div>
-    </div>
-    </div>
+
+
   );
 }
 
